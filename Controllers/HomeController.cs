@@ -6,16 +6,15 @@ namespace MeuPrimeiroSiteMVC.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
+        
         public IActionResult Index()
         {
-            return View();
+            HomeModel home = new HomeModel();
+
+            home.Nome = "Luis Guilherme";
+            home.Email = "guilherme.becel@gmail.com";
+
+            return View(home);
         }
 
         public IActionResult Privacy()
